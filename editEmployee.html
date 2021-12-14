@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+body{
+font-family:Comic Sans MS;
+color:black;
+background-image: url("images/CCCC.jpg");
+background-position: center;
+  background-repeat: no-repeat; 
+ background-size: 1700px 2000px;
+  }
+</style>
+<meta charset="ISO-8859-1">
+
+<title>Edit Employee</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Edit Employee</h1>
+        <br />
+        <form action="#" th:action="@{/save}" th:object="${employee}"
+            method="post">
+ 
+            <table border="0" cellpadding="10">
+                <tr>             
+                    <td>Employee ID:</td>
+                    <td>
+                        <input type="text" th:field="*{id}" name="id"  />
+                    </td>
+                </tr>        
+                <tr>             
+                    <td>First Name:</td>
+                    <td>
+                        <input type="text" th:field="*{firstname}" name="firstname" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" th:field="*{lastname}" name="lastname" /></td>
+                </tr>
+                <tr>
+                    <td>Phone No:</td>
+                    <td><input type="text" th:field="*{phone}" name="phone" /></td>
+                </tr>
+                <tr>
+                    <td>Designation:</td>
+                    <td><input type="text" th:field="*{designation}" name="designation" /></td>
+                </tr>                            
+                <tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" th:field="*{email}"name="email" /></td>
+                </tr>                            
+                <tr>
+                <tr>
+                    <td>Current Address:</td>
+                    <td><input type="text" th:field="*{CurrentAddress}" name="CurrentAddress" /></td>
+                </tr>                            
+                <tr>
+                    <td colspan="2"><button type="submit">Save</button> </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

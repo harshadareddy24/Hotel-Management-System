@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>  
+<html xmlns:th="http://www.thymeleaf.org">
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<style>  
+    body{
+font-family:Comic Sans MS;
+color:black;
+background-image: url("images/CCCC.jpg");
+background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  }
+    .container {  
+        padding: 50px;  
+    }  
+    
+    input[type=text], input[type=password], textarea {  
+      width: 30%;  
+      padding: 15px;  
+      margin: 5px 0 22px 0;  
+      display: inline-block;  
+      border: none;  
+      align:center;  
+    }  
+    input[type=text]:focus, input[type=password]:focus {  
+       
+      outline: none;  
+    }  
+    
+    div {  
+                padding: 10px 0;  
+             }  
+   
+    .registerbtn {  
+      background-color:#644436;  
+      color: white;  
+      padding: 16px 20px;  
+      margin: 8px 0;  
+      border: none;  
+      cursor: pointer;  
+      width: 15%;  
+      opacity: 0.9;  
+    }  
+    .registerbtn:hover {  
+      opacity: 1;  
+    }  
+    
+    </style>  
+</head>  
+<body> 
+ 
+<form th:action="@{/admin}" th:object="${employee}" method="post" align="center">  
+  <div class="container">  
+  <center>  <h1>Employee Registeration Form</h1> </center>  
+ 
+  <label for="Firstname"><b>First Name:</b></label>  
+        <input type="text" name="firstname" placeholder= "Firstname" size="15" required /> <br>  
+
+    <label for="lastname"><b>Last Name:</b></label>     
+    <input type="text"  name="lastname" placeholder="Lastname" size="15"required /> <br>  
+
+    <label for="phone"><b>Phone No:</b></label>   
+        <input type="text"  name="phone" placeholder="phone no." size="15" required/> <br>  
+        
+       <label for=" CurrentAddress"><b> Address:</b></label> 
+        <input type="text"   placeholder=" CurrentAddress" name="currentAddress" size="15" required/> <br> 
+         
+         <label for="email"><b>Email ID:</b></label>  
+         <input type="text"placeholder="Enter Email" name="email" size="15"required> <br> 
+         
+         <label for="designation"><b>Designation:</b></label>  
+         <input type="text" placeholder="Enter Designation" name="designation" size="15"required> <br> 
+          
+            <label for="password"><b>Password:</b></label>  
+            <input type="password" placeholder="Enter Password" name="password" size="15"required>  <br>
+          
+                      <button type="submit" class="registerbtn">Add Employee</button> <br>
+            </div>    
+        </form> 
+        </body>  
+        </html>  

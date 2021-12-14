@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+body{
+font-family:Comic Sans MS;
+color:black;
+background-image: url("images/CCCC.jpg");
+background-position: center;
+  background-repeat: no-repeat; 
+ background-size: 1700px 2000px;
+  }
+</style>
+<meta charset="ISO-8859-1">
+<title>Employee List</title>
+</head>
+<body>
+
+
+ <center>
+ 
+<h1>Employee List</h1>
+
+ <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Employee Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Desigation</th>
+                <th>Email</th>
+                <th>Current Address</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+ <tr th:each="employee:${listEmployee}">
+                <td th:text="${employee.id}">Employee Id</td>
+                <td th:text="${employee.firstname}">First Name</td>
+                <td th:text="${employee.lastname}">Last Name</td>
+                <td th:text="${employee.phone}">Phone No</td>
+                <td th:text="${employee.designation}">Designation</td>
+                <td th:text="${employee.email}">Email</td>
+                <td th:text="${employee.CurrentAddress}">Current Address</td>
+                <td>
+                    <a th:href="@{'/edit/' + ${employee.id}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                     <a th:href="@{'/delete/' + ${employee.id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </center>
+</body>
+</html>

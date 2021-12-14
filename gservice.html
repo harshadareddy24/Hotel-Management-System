@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>  
+<html xmlns:th="http://www.thymeleaf.org">
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<style>  
+    body{
+font-family:Comic Sans MS;
+color:black;
+background-image: url("images/CCCC.jpg");
+background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  }
+    .container {  
+        padding: 20px;  
+    }  
+    
+    input[type=text], input[type=password], textarea {  
+      width: 30%;  
+      padding: 15px;  
+      margin: 5px 0 22px 0;  
+      display: inline-block;  
+      border: none;  
+        
+    }  
+    input[type=text]:focus, input[type=password]:focus {  
+       
+      outline: none;  
+    }  
+    
+    div {  
+                padding: 10px 0;  
+             }  
+   
+    .registerbtn {  
+      background-color:#644436;  
+      color: white;  
+      padding: 16px 20px;  
+      margin: 8px 0;  
+      border: none;  
+      cursor: pointer;  
+      width: 10%;  
+      opacity: 0.9;  
+    }  
+    .registerbtn:hover {  
+      opacity: 1;  
+    }  
+    
+    </style>  
+</head>  
+<body> 
+ 
+<form th:action="@{/Book_Success}" th:object="${booking}" method="post" align="center">  
+  <div class="container">  
+    <h1> Reservation Form</h1> 
+    
+  <label for="Firstname"><b>First Name :</b></label>  
+  <input type="text" name="firstname" placeholder= "Firstname" size="15" required /> <br>  
+
+  <label for="lastname"><b>Last Name :</b></label>     
+  <input type="text"  name="lastname" placeholder="Lastname" size="15"required /> <br>  
+ 
+  <label for="phone"><b>Phone No :</b></label>   
+  <input type="text"  name="phone" placeholder="phone no." size="15" required/> <br>  
+         
+  <label for="email"><b>  Email ID :</b></label>  
+  <input type="text"  name="email" placeholder="Enter Email"  size="15"required/> <br>
+         
+  <label for="person"><b> Persons :</b></label>  
+  <input type="text"  name="NoOfPersons" placeholder="Enter no of person" size="15" required/> <br>
+          
+  <label for="date"><b>Checkin Date  :</b></label>
+  <input type="date" name="CheckinDate"    max="2024-12-31"size="15" required/><br>
+         	
+  <label for="start"><b>Checkout Date :</b></label>
+  <input type="date" name="CheckoutDate"   max="2024-12-31" size="15"required/><br>
+					
+  <button type="submit" class="registerbtn" ><b>Book</b></button> <br>
+         </div>     
+        </form> 
+        </body>  
+        </html>  

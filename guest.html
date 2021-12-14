@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+body{
+font-family:Comic Sans MS;
+color:black;
+background-image: url("images/CCCC.jpg");
+background-position: center;
+  background-repeat: no-repeat; 
+ background-size: 1700px 2000px;
+  }
+</style>
+<meta charset="ISO-8859-1">
+<title>Guest List</title>
+</head>
+<body>
+<center>
+<h1>Guest List</h1>
+
+ <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Guest Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+ <tr th:each="User:${listUser}">
+                <td th:text="${User.id}">Guest Id</td>
+                <td th:text="${User.firstname}">First Name</td>
+                <td th:text="${User.lastname}">Last Name</td>
+                <td th:text="${User.Phone}">Phone No</td>
+                <td th:text="${User.email}">Email</td>
+               
+            </tr>
+        </tbody>
+    </table>
+    </center>
+</body>
+</html>
